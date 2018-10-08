@@ -7,10 +7,12 @@ inverse([],[]).
 */
 inverse([X|L], Lr) :- inverse(L,Lt), concatene(Lt,[X],Lr).
 
-
 supprime([], _, []).
 supprime([X|L], X, Lr) :- supprime(L, X, Lr).
 supprime([X|L], Y, Lr) :- supprime(L, Y, Lt), concatene([X],Lt,Lr).
 
-filtre([],_,[]).
+/*filtre(_,[],[]).
+filtre(L, [Y|L2], Lr) :- filtre(Lt, L2, Lr), supprime(L, Y, Lt). */
+
+filtre(L,[],L).
 filtre(L, [Y|L2], Lr) :- supprime(L, Y, Lt), filtre(Lt, L2, Lr).
