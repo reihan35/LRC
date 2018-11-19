@@ -1,0 +1,39 @@
+Exercice 1 :
+
+- not (and knows P knows not knows P) 
+satisfiable et valide (négation insatisfiable)
+
+- and knows P knows knows not P
+insatisfiable 
+
+- négation : and knows P knows knows not P
+La négation est satisfiable donc la formule est non valide. 
+
+not and knows P knows knows not P 
+La formule est satisfiable.
+
+Exercice 2 :
+
+La négation, not (equiv (not nec P) (nec not nec P)), est satisfiable donc la formule est non valide dans le système S4.
+
+Exercice 3:
+
+Q3) 
+		B peut savoir si elle a un papillon sur la tête (or (nec R_B B) (nec R_B not B)) seulement dans w3.
+		
+		Si c a le papillon sur la tête, alors B sait si elle a le papillon sur la tête : 
+		or not c (or (nec R_B B) (nec R_B not B))
+		
+		Vraie pour w1 et w2 car prémisse fausse.
+		Vraie pour w3 car or (nec R_B B) (nec R_B not B) vraie dans le monde w3, où C est vérifiée.
+		
+		Donc vraie dans le modèle.
+		
+Q4) A sait que C ne sait pas si elle a un papillon sur la tête :
+			nec R_A not(or nec R_C C nec R_C not C)
+
+Q5) si B sait si elle a un papillon sur la tête, alors A sait qu'elle le sait :
+			or not or nec R_B B nec R_B not B nec R_A or nec R_B B nec R_B not B
+			
+			Vraie dans w1 et w2 car prémisse fausse (B ne sait pas si elle a un papillon sur la tête)
+			Vraie dans w3.
