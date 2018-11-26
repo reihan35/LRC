@@ -1,0 +1,27 @@
+Exercice 1
+
+2. 
+(i) Suppression de tous les mondes car pour chaque monde, a hésite entre plusieurs cartes possibles pour b.
+
+(ii) Aucun monde n'est supprimé car dans chaque monde, a hésite entre plusieurs cartes pour b.
+
+3.
+(i) model1 = upd_pa model0 (Kn b (Ng (holds_b_jaune))) 
+model2 = upd_pa model1 (Ng (Kn a holds_b_rouge))
+model3 = upd_pa model2 (Kn a (Ng (holds_a_jaune)))
+
+(ii)
+model1 = upd_pa model0 (Kn c (Ng (holds_c_jaune)))
+
+Dans les mondes (v, r, j) et (r, v, j), il existe un monde accessible par c où c possède la carte jaune. On les supprime donc.
+ 
+model2 = upd_pa model1 (Ng (Kn a (Kn b holds_b_jaune)))
+
+On supprime les mondes (r, j, v) et (v, j, r), dans lesquels il existe un monde accessible par a où il existe un monde accessible par b dans lequel b possède la carte jaune. 
+
+model3 = upd_pa model2 (Kn c (Ng (holds_b_verte))
+On supprime (j, v, r) car dans le seul monde accessible par c depuis ce monde ((j,v,r)), b possède la carte verte.
+
+4. L'ordre n'importe pas. 
+
+
