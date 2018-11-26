@@ -1,0 +1,37 @@
+Vérification
+
+1.
+add w1 isItTrue B
+add w1 isItTrue A
+add w1 isItTrue pos A
+add w1 isItTrue nec B
+add w4 isItTrue and nec B nec A
+add w1 isItTrue nec pos B
+add w1 isItTrue or not A pos B
+add w2 isItTrue or not A pos B
+add w3 isItTrue or not A pos B
+add w4 isItTrue or not A pos B
+
+2. 
+createNewNode w1
+createNewNode w2
+add w1 q
+add w2 p
+link w1 w2 R
+link w2 w2 R
+
+3.
+
+Satisfiabilité
+
+1. Pour que la formule soit satisfiable, il faut qu'il existe un monde accessible depuis tout monde où P est vérifié, et que tous les mondes accessibles depuis tout monde vérifient P. On crée donc un monde accessible depuis un monde de notre modèle vérifiant P et non P, ce qui est impossible.
+
+2. La formule est satisfiable car le graphe produit ne contient aucun clash.
+
+La formule est satisfiable car la branche pos pos pos P ne génère pas de clash.
+
+La formule est satisfiable car le graphe ne contient aucun clash.
+
+not (imp nec (imp P Q) (imp nec P nec Q)) est insatisfiable donc imp nec (imp P Q) (imp nec P nec Q) est valide.
+
+

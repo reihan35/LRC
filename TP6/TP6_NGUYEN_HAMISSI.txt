@@ -37,3 +37,10 @@ Q5) si B sait si elle a un papillon sur la tête, alors A sait qu'elle le sait :
 			
 			Vraie dans w1 et w2 car prémisse fausse (B ne sait pas si elle a un papillon sur la tête)
 			Vraie dans w3.
+			
+Exercice 4:
+
+(w1, w2) : 1
+(w1, w3) : 3
+(w2, w4) : 3
+(w3, w4) : 1
