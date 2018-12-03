@@ -1,12 +1,12 @@
 Exercice 1
 
-2. 
+2.
 (i) Suppression de tous les mondes car pour chaque monde, a hésite entre plusieurs cartes possibles pour b.
 
 (ii) Aucun monde n'est supprimé car dans chaque monde, a hésite entre plusieurs cartes pour b.
 
 3.
-(i) model1 = upd_pa model0 (Kn b (Ng (holds_b_jaune))) 
+(i) model1 = upd_pa model0 (Kn b (Ng (holds_b_jaune)))
 model2 = upd_pa model1 (Ng (Kn a holds_b_rouge))
 model3 = upd_pa model2 (Kn a (Ng (holds_a_jaune)))
 
@@ -14,14 +14,37 @@ model3 = upd_pa model2 (Kn a (Ng (holds_a_jaune)))
 model1 = upd_pa model0 (Kn c (Ng (holds_c_jaune)))
 
 Dans les mondes (v, r, j) et (r, v, j), il existe un monde accessible par c où c possède la carte jaune. On les supprime donc.
- 
+
 model2 = upd_pa model1 (Ng (Kn a (Kn b holds_b_jaune)))
 
-On supprime les mondes (r, j, v) et (v, j, r), dans lesquels il existe un monde accessible par a où il existe un monde accessible par b dans lequel b possède la carte jaune. 
+On supprime les mondes (r, j, v) et (v, j, r), dans lesquels il existe un monde accessible par a où il existe un monde accessible par b dans lequel b possède la carte jaune.
 
 model3 = upd_pa model2 (Kn c (Ng (holds_b_verte))
 On supprime (j, v, r) car dans le seul monde accessible par c depuis ce monde ((j,v,r)), b possède la carte verte.
 
-4. L'ordre n'importe pas. 
+4. L'ordre n'importe pas.
 
+Exercice 2
 
+2. pour i=1,2 K_i (15/05) v K_i(16/05) v K_i(19/05) v K_i(17/06) v K_i(18/06) v K_i(14/07) v K_i(16/07) v K_i(14/08) v K_i(15/08) v K_i(17/08)
+
+3. (i) model1 = upd_pa model0 (Ng (Kn a))
+-> aucun monde enlevé
+
+model2 = upd_pa model1 (Kn a (Ng (Knwhich b)))
+-> élimination des mondes où il existe un arc 'a' vers un monde à partir duquel il n'y a pas d'arc 'b' pointant vers un autre monde
+-> 15 mai, 16 mai, 19 mai, 17 juin, 18 juin retirés
+
+(ii) model3 = upd_pa model2 (Knwhich b)
+-> élimination des mondes où il existe un arc 'b' vers un autre monde
+-> 14 juillet et 14 août retirés
+
+(iii) model4 = upd_pa model3 (Knwhich a)
+-> élimination des mondes où il existe un arc 'a' vers un autre monde
+-> 15 août et 17 août retirés
+
+Cheryl est née le 16 juillet.
+
+4. (i) "Je ne sais pas quelle est la date d'anniversaire de Cheryl" car il n'existe aucun monde où Albert connaît cette date car pour chaque monde, il existe un arc correspondant à Albert pointant vers un autre monde.
+
+(ii) "Maintenant" car pour chaque monde non éliminé par (i), la phrase est vraie : Bernard ne connaissait pas la date d'anniversaire de Cheryl.
